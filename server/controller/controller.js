@@ -27,13 +27,52 @@ exports.create = (req,res) => {
 }
 
 exports.find = (req,res) => {
-
+    Userdb.find()
+    .then(user => {
+        res.send(user)
+    })
+    .catch(err => {
+        res.status(500).send({ message: err.message || "error occured while retrieving data"})
+    })
 }
 
 exports.update = (req,res) => {
+    if(!req.body){
+        return res
+            .status(400)
+            .send({ message : "Please can't be left empty"})
+    }
 
+    const id = req.params.id;
+    Userdb.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
+        .then(data => {
+            if(!data){
+                res.status(404).send({ message: `user with ${id} not found. Please try again`})
+            }else{
+                res.send(data);
+            }
+        })
+        .catch(err => {
+            res.status(500).send({ message: "error updating user"})
+        })
 }
 
 exports.delete = (req,res) => {
+    const id = req.params.id;
 
+    Userdb.findByIdAndDelete(id)
+        .then(data => {
+            if(!data){
+                res.status(404).send({ message: `Error deleting user with id ${id}`})
+            }else{
+                res.send({
+                    message: "User deleted"
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "trouble deleting User with id=" + id
+            })
+        })
 }
