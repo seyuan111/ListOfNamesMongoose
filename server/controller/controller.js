@@ -27,13 +27,31 @@ exports.create = (req,res) => {
 }
 
 exports.find = (req,res) => {
-    Userdb.find()
-    .then(user => {
-        res.send(user)
-    })
-    .catch(err => {
-        res.status(500).send({ message: err.message || "error occured while retrieving data"})
-    })
+
+    if(req.query.id){
+        const id = req.query.id;
+
+        Userdb.findById(id)
+            .then(data => {
+                if(!data){
+                    res.status(404).send({message: `id ${id} not found please try again`})
+                }else{
+                    res.send(data)
+                }
+            })
+            .catch(err => {
+                res.status(500).send({ message: `Error finding ${id}. please try again`})
+            })
+
+    }else{
+        Userdb.find()
+        .then(user => {
+            res.send(user)
+        })
+        .catch(err => {
+            res.status(500).send({ message: err.message || "error occured while retrieving data"})
+        })
+    }
 }
 
 exports.update = (req,res) => {

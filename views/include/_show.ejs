@@ -1,10 +1,11 @@
+<% for(var i = 0; i < users.length; i++){ %>
 <tr>
-    <td>1</td>
-    <td>Username</td>
-    <td>Male</td>
-    <td>username@gmail.com</td>
-    <td>Duke University</td>
-    <td>Occupational Therapist</td>
+    <td><%= i + 1 %></td>
+    <td><%= users[i].name %></td>
+    <td><%= users[i].gender %></td>
+    <td><%= users[i].email %></td>
+    <td><%= users[i].college %></td>
+    <td><%= users[i].occupation %></td>
     <td>
         <a href="/update-user" class="btn border-shadow update">
             <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
@@ -14,3 +15,4 @@
         </a>
     </td>
 </tr>
+<% } %>
