@@ -1,4 +1,4 @@
-<form method="POST" id="add_user">
+<form action="/api/users" method="POST" id="add_user">
     <div class="new_user">
         <div class="form_group">
             <label for="name" class="text-light">Name</label>
@@ -6,22 +6,11 @@
             <input type="text" name="name" value="" placeholder="enter name">
         </div>
         <div class="form_group">
-            <label for="gender" class="text-light">Gender</label>
-            <div class="radio inline">
-                <input type="radio" name="gender" value="Male">
-                <label for="gender" class="text-light">Male</label>
-            </div>
-            <div class="radio inline">
-                <input type="radio" name="gender" value="Female">
-                <label for="gender" class="text-light">Female</label>
-            </div>
-        </div>
-        <div class="form_group">
             <label for="Email" class="text-light">Email</label>
             <input type="text" name="email" value="" placeholder="person@yahoo.com">
         </div>
         <div class="form_group">
-            <label for="age" class="text-light">age</label>
+            <label for="age" class="text-light">Age</label>
             <input type="text" name="age" value="" placeholder="25">
         </div>
         <div class="form_group">

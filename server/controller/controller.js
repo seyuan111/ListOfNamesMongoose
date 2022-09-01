@@ -8,16 +8,17 @@ exports.create = (req,res) => {
 
     const user = new Userdb({
         name: req.body.name,
+        age: req.body.age,
         email: req.body.email,
         college: req.body.college,
-        occupation: req.body.occupation,
-        gender: req.body.gender
+        occupation: req.body.occupation
     })
 
     user
      .save(user)
      .then(data => {
-        res.send(data)
+        //res.send(data)
+        res.redirect('add-user')
      })
      .catch(err => {
         res.status(500).send({
