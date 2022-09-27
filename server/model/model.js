@@ -11,12 +11,12 @@ var schema = new mongoose.Schema({
     },
     email: {
         type: String,
-        unique: true
+        required: true
     },
     college: {
         type: String,
     },
-    occupation: {
+    company: {
         type: String,
     },
 })

@@ -5,12 +5,12 @@
     <td><%= users[i].age %></td>
     <td><%= users[i].email %></td>
     <td><%= users[i].college %></td>
-    <td><%= users[i].occupation %></td>
+    <td><%= users[i].company %></td>
     <td>
-        <a href="/update-user" class="btn border-shadow update">
+        <a href="/update-user?id=<%= users[i]._id %>" class="btn border-shadow update">
             <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
         </a>
-        <a class="btn border-shadow delete">
+        <a class="btn border-shadow delete" data-id=<%= users[i]._id %>>
             <span class="text-gradient"><i class="fas fa-times"></i></span>
         </a>
     </td>

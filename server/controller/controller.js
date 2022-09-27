@@ -11,7 +11,7 @@ exports.create = (req,res) => {
         age: req.body.age,
         email: req.body.email,
         college: req.body.college,
-        occupation: req.body.occupation
+        company: req.body.company
     })
 
     user
