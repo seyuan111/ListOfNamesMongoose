@@ -5,16 +5,16 @@ var schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    age: {
-        type: Number,
-        required: true
-    },
     email: {
         type: String,
         required: true
     },
     college: {
         type: String,
+    },
+    occupation: {
+        type: String,
+        required: true
     },
     company: {
         type: String,
