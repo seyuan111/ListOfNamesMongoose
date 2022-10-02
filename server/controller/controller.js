@@ -9,9 +9,9 @@ exports.create = (req,res) => {
     const user = new Userdb({
         name: req.body.name,
         email: req.body.email,
-        college: req.body.college,
         occupation: req.body.occupation,
-        company: req.body.company
+        company: req.body.company,
+        contact: req.body.contact
     })
 
     user

@@ -9,14 +9,14 @@ var schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    college: {
-        type: String,
-    },
     occupation: {
         type: String,
         required: true
     },
     company: {
+        type: String,
+    },
+    contact: {
         type: String,
     },
 })
